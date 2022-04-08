@@ -1,0 +1,84 @@
+\documentclass[12pt,onecolumn]{article}
+
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+
+\usepackage[letterpaper,left=1.01in,right=1.01in,top=1.05in,bottom=1.03in]{geometry}
+
+\usepackage{amsmath}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\title{\textbf{CANDELS UDS Redshift Catalog README}}
+
+\author{\textbf{Kodra et al. (2022)}}
+\date{\today}
+
+
+\newcommand{\photoz}{photo-$z$}
+\newcommand{\Photoz}{Photo-$z$}
+\newcommand{\photozs}{photo-$z$'s}
+\newcommand{\Photozs}{Photo-$z$'s}
+\newcommand{\zphot}{$z_\mathrm{phot}$}
+\newcommand{\specz}{spec-$z$}
+\newcommand{\Specz}{Spec-$z$}
+\newcommand{\speczs}{spec-$z$'s}
+\newcommand{\Speczs}{Spec-$z$'s}
+\newcommand{\zspec}{$z_\mathrm{spec}$}
+\newcommand{\grismz}{grism-$z$}
+\newcommand{\Grismz}{Grism-$z$}
+\newcommand{\grismzs}{grism-$z$'s}
+\newcommand{\Grismzs}{Grism-$z$'s}
+\newcommand{\zgrism}{$z_\mathrm{grism}$}
+
+\newcommand{\zpeak}{\texttt{z\_peak}}
+\newcommand{\zbest}{\texttt{z\_best}}
+\newcommand{\zweight}{\texttt{z\_weight}}
+
+
+\newcommand{\fix}[1]{\textbf{\textcolor{red}{#1}}}
+
+
+
+
+\newcommand{\field}{UDS}
+% \newcommand{\photomcat}{\texttt{CANDELS.UDS.F160W.v1_1.photom.cat}}  % Name in Dritan's README
+\newcommand{\photomcat}{\texttt{hlsp\_candels\_hst\_wfc3\_uds-tot-multiband\_f160w\_v1-1photom\_cat.txt}}
+\newcommand{\grismzfit}{\texttt{uds\_3dhst.v4.1.5.zfit.linematched.fits}}
+\newcommand{\grismcat}{\texttt{uds\_3dhst.v4.2.cat.fits}}
+
+\begin{document}
+
+\maketitle
+
+\input{redshift-cat_readme_template}
+
+
+
+\section*{Spectroscopic Redshifts}
+
+The catalogs from which the high quality spectroscopic redshifts were gathered are the following:
+\begin{itemize}
+\item \texttt{deimos\_uds.dat}
+\item \texttt{UDS\_redshifts\_18Oct2010.fits}
+\item \texttt{UDSz-CANDELS-V2.cat}
+\item \texttt{UDSz-secure-March2014.cat}
+\item \texttt{zcat.UDS.2011-01-10.dat}
+\item DEIMOS
+\item MOSDEF (MOSFIRE)
+\end{itemize}
+
+\subsection*{N.M.~Hathi Spectroscopic Redshift Catalogs}
+\subsubsection*{References for spectroscopic redshifts catalogs and quality flags}
+
+\noindent 3D-HST and MOSDEF:
+\begin{itemize}
+\item 3D\_HST: Momcheva et al.\ 2016, ApJS, 225, 27
+\item MOSDEF: Kriek et al.\ 2015, ApJS, 218, 15
+\item quality flags for 3D-HST and MOSDEF are approximated as 3.0 and 4.0, respectively
+\end{itemize}
+
+
+\end{document}

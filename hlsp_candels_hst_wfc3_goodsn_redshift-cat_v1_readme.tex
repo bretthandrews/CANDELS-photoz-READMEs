@@ -1,0 +1,117 @@
+\documentclass[12pt,onecolumn]{article}
+
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+
+\usepackage[letterpaper,left=1.01in,right=1.01in,top=1.05in,bottom=1.03in]{geometry}
+
+\usepackage{amsmath}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\title{\textbf{CANDELS GOODS-N Redshift Catalog README}}
+
+\author{\textbf{Kodra et al. (2022)}}
+\date{\today}
+
+
+\newcommand{\photoz}{photo-$z$}
+\newcommand{\Photoz}{Photo-$z$}
+\newcommand{\photozs}{photo-$z$'s}
+\newcommand{\Photozs}{Photo-$z$'s}
+\newcommand{\zphot}{$z_\mathrm{phot}$}
+\newcommand{\specz}{spec-$z$}
+\newcommand{\Specz}{Spec-$z$}
+\newcommand{\speczs}{spec-$z$'s}
+\newcommand{\Speczs}{Spec-$z$'s}
+\newcommand{\zspec}{$z_\mathrm{spec}$}
+\newcommand{\grismz}{grism-$z$}
+\newcommand{\Grismz}{Grism-$z$}
+\newcommand{\grismzs}{grism-$z$'s}
+\newcommand{\Grismzs}{Grism-$z$'s}
+\newcommand{\zgrism}{$z_\mathrm{grism}$}
+
+\newcommand{\zpeak}{\texttt{z\_peak}}
+\newcommand{\zbest}{\texttt{z\_best}}
+\newcommand{\zweight}{\texttt{z\_weight}}
+
+
+\newcommand{\fix}[1]{\textbf{\textcolor{red}{#1}}}
+
+
+
+
+\newcommand{\field}{GOODS-N}
+% \newcommand{\photomcat}{\texttt{CANDELS.GOODSN.F160W.v1_1.photom.cat}}  % Name in Dritan's README
+\newcommand{\photomcat}{\texttt{hlsp\_candels\_hst\_wfc3\_goodsn-barro19\_multi\_v1-1\_photometry-cat.txt}\\
+(Note: there are 6 objects missing from the photometry catalog that are in the redshift catalog.)
+}
+\newcommand{\grismzfit}{\texttt{goodsn\_3dhst.v4.1.5.zfit.linematched.fits}}
+\newcommand{\grismcat}{\texttt{goodsn\_3dhst.v4.1.cat.fits}}
+
+
+\begin{document}
+
+\maketitle
+
+\input{redshift-cat_readme_template}
+
+
+\section*{Spectroscopic Redshifts}
+
+The catalogs from which the high quality spectroscopic redshifts were gathered are the following:
+\begin{itemize}
+\item \texttt{cooper.2011apjs.goodsn.dat}
+\item \texttt{gdn\_mosfire\_specz.dat}
+\item \texttt{mosdef\_zcat.16aug2016.ascii}
+\item DEIMOS
+\item MOSDEF (MOSFIRE)
+\end{itemize}
+
+\subsection*{N.M.~Hathi Spectroscopic Redshift Catalogs}
+\subsubsection*{References for spectroscopic redshifts catalogs}
+
+\noindent 3D-HST and MOSDEF:
+\begin{itemize}
+\item 3D\_HST: Momcheva et al.\ 2016, ApJS, 225, 27
+\item MOSDEF: Kriek et al.\ 2015, ApJS, 218, 15
+\item quality flags for 3D-HST and MOSDEF are approximated as 3.0 and 4.0, respectively
+\end{itemize}
+
+\noindent Other Sources:
+\begin{itemize}
+\item Barger\_*: Barger et al. 2008, ApJ, 689, 687 and references therein - ACS, K, 24$\mu\mathrm{m}$ and UV detected sources
+\item PEARS\_ETGs: Ferreras et al.\ 2009, ApJ, 706, 158              % Doesn't seem to be in redshift-cat file
+\item Reddy\_2006: Reddy et al.\ 2006, ApJ, 653, 1004
+\item Yoshikawa\_2010: Yoshikawa et al.\ 2010, ApJ, 718, 112         % Doesn't seem to be in redshift-cat file
+\item Cooper\_2011: Cooper et al.\ 2011, ApJS, 193, 14               % string is abbreviated as Cooper_20
+\item Finkelstein\_2013: Finkelstein et al.\ 2013, Nature, 502, 524  % Doesn't seem to be in redshift-cat file
+\item Ono\_2012: Ono et al.\ 2012, ApJ, 744, 83                      % Doesn't seem to be in redshift-cat file
+\item Song\_2014: Song et al.\ 2014, ApJ, 791, 3                     % Doesn't seem to be in redshift-cat file
+\item Pirzkal\_2013: Pirzkal et al.\ 2013, ApJ, 772, 48              % string is abbreviated as Pirzkal_2
+\item Wirth\_2015: Wirth et al.\ 2015, AJ, 150, 153                  % string is abbreviated as Wirth_200
+\end{itemize}
+
+
+\noindent GOODS-N-ALL catalog
+\begin{itemize}
+\item Title:	Compendium of Redshifts in the GOODS-N field
+\item Version:	1.00
+\item Date:	2004-Jan-14
+\item References:
+    \begin{itemize}
+        \item L.\ L.\ Cowie, et al.\ 2004, AJ, 127, 3137
+	    \item G.\ D.\ Wirth, et al.\ 2004, AJ, 127, 3121
+    \end{itemize}
+\item URLs:
+    \begin{itemize}
+        \item \href{http://www.ifa.hawaii.edu/~cowie/hhdf/acs.html}{http://www.ifa.hawaii.edu/~cowie/hhdf/acs.html}
+        \item \href{http://www2.keck.hawaii.edu/realpublic/science/tksurvey/index.html}{http://www2.keck.hawaii.edu/realpublic/science/tksurvey/index.html}
+    \end{itemize}
+\end{itemize}
+
+
+
+\end{document}

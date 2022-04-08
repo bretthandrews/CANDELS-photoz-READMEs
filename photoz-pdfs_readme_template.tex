@@ -1,0 +1,42 @@
+\section*{Contents}
+This file contains details on the files containing the \photoz\ probability distributions (p($z$) or PDF) from all participants and combination methods, for all objects from the \field\ field.  There is one PDF file per object for which redshift distributions have been estimated. The ID in the file name coincides with the CANDELS tfit ID used in the photometry catalog:
+
+\photomcat\
+
+\section*{Column Description}
+
+\begin{center}
+\begin{tabular}{ll}
+\# 1 z            &	 Redshift values for the grid on which PDFs are tabulated \\
+\# 2 Finkelstein  &  Probability Density Function (PDF) from Finkelstein \\
+\# 3 Fontana 	  &	 PDF from Fontana \\
+\# 4 Pforr 		  &	 PDF from Pforr \\
+\# 5 Salvato 	  &	 PDF from Salvato \\
+\# 6 Wiklind 	  &	 PDF from Wiklind \\
+\# 7 Wuyts 		  &	 PDF from Wuyts \\
+\# 8 HB4	  	  &	 PDF from Hierarchical Bayesian combination, constructed\\
+                  &  using the PDFs from the best-performing four groups \\
+\# 9 mFDa4	 	  &	 PDF from the minimum Fr\'{e}chet Distance combination\\
+                  &  (computed with $\ell^1$ distance metric), constructed using the\\
+                  &  PDFs from the best-performing four groups\\
+\end{tabular}
+\end{center}
+
+
+
+\section*{Notes}
+\begin{itemize}
+
+\item HB4: the probability distribution with the Hierarchical Bayesian combination method (see Section 4.1), which is evaluated using only 4 of the 6 participants (Finkelstein, Fontana, Salvato, Wuyts).
+
+\item mFDa4: the probability distribution evaluated using the minimum Frechet Distance absolute (mFDa) combination method for the given object (Section 4.2).  It is chosen by using only 4 of the 6 participants (Finkelstein, Fontana, Salvato, Wuyts).
+
+\item If the PDF from a participant is missing for a given object, that participant is not included in (1) the calculation of the combination methods HB4 and mFDa4 and (2) not included in the calculation of the parameter alpha of the HB method (Equation 6). Therefore, we specify at the end of the header, the number of participants used in each file separately, as shown below:
+
+\# Number of participants used to determine HB4: 4\\
+\# HB4 alpha: 1.825\\
+\# Number of participants used to determine mFDa4: 4
+
+\item Negative values ($-1.0$) are used whenever a given participant has not provided a probability distribution for an object.
+
+\end{itemize}

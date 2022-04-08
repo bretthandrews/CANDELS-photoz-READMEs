@@ -1,0 +1,142 @@
+\section*{Contents}
+This file provides compiled and computed redshift information, recommendations for redshift useage from the SEDs/Photz Working Group, and details on the files containing summary statistics on the results from each \photoz\ computation participant.  The tabulated values include the best photometric redshifts reported by CANDELS, spectroscopic redshifts where available, and 3D-HST (grism) redshifts where available. Additionally, this file includes the redshifts at which \photoz\ probability distributions peak (\zpeak), weighted centroid values (\zweight), and 68.3\% and 95.4\% credible intervals for the redshift.
+
+In addition to the six individual codes for which probability distributions functions (PDFs) were obtained, we also provide results for two methods of combining individual PDFs: the Hierarchical Bayesian method (HB; see Section 4.1), and the minimum Frechet Distance (mFDa; see Section 4.2). The HB method produces \zweight\ values that are closer to the spectroscopic redshifts in test samples, whereas the mFDa method provides credible intervals that are more accurate when tested with spectroscopy.  Only 4 participants (Finkelstein, Fontana, Salvato, and Wuyts) are used in calculating the HB and mFDa values (hence the labels HB4 and mFDa4); restricting to this subset resulted in smaller errors and better-calibrated PDFs than using all 6 participants in the calculation.
+
+We provide recommendations for usage as follows:
+
+\begin{itemize}
+\item We advise everyone to use the appropriate columns depending on the needs of each case. You should use \zbest\ if you want the best estimate of an object's redshift without regard to uniformity (\zbest\ is determined from the combined dataset of spectroscopic redshifts, 3D-HST grism redshifts, and mFDa4 photometric redshifts).
+
+\item For the best single estimate of redshift calculated uniformly for all objects, you should use \texttt{HB4\_z\_weight}.  This minimized errors in tests of estimated photometric redshifts against independent spectroscopic redshift sampled, yielding:\\
+\-\hspace{1cm} $\sigma_\mathrm{NMAD} = 0.02265$, $\lvert \frac{(\Delta z)}{(1+z)} \rvert > 0.15$ and $\mathrm{Outlier \, Fraction} = 0.06688$.\\
+Testing them against a carefully selected sample of 3D-HST grism redshifts, we again get the best results for \texttt{HB4\_z\_weight}:\\
+\-\hspace{1cm} $\sigma_\mathrm{NMAD} = 0.01881$ and $\mathrm{Outlier \, Fraction} = 0.01901$.
+
+\item Finally, if you want uniformly calculated redshifts, with relatively well-calibrated probability distributions / accurate error estimates, you should use mFDa4.  The paper presents the tests of the accuracy of the probability distributions (and therefore the quality of the error estimates) for each participant and combination method that have led to this conclusion.
+
+\end{itemize}
+
+
+\section*{Column Description}
+
+    \# 1 File \\
+    \# 2 ID \\
+    \# 3 RA \\
+    \# 4 DEC \\
+    \# 5 z\_best\\
+    \# 6 z\_best\_type\\
+    \# 7 z\_spec\\
+    \# 8 z\_spec\_ref\\
+    \# 9 z\_grism\\
+    \# 10 mFDa4\_z\_peak \\
+    \# 11 mFDa4\_z\_weight \\
+    \# 12 mFDa4\_z683\_low \\
+    \# 13 mFDa4\_z683\_high \\
+    \# 14 mFDa4\_z954\_low \\
+    \# 15 mFDa4\_z954\_high \\
+    \# 16 HB4\_z\_peak \\
+    \# 17 HB4\_z\_weight \\
+    \# 18 HB4\_z683\_low \\
+    \# 19 HB4\_z683\_high \\
+    \# 20 HB4\_z954\_low \\
+    \# 21 HB4\_z954\_high \\
+    \# 22 Finkelstein\_z\_peak \\
+    \# 23 Finkelstein\_z\_weight \\
+    \# 24 Finkelstein\_z683\_low \\
+    \# 25 Finkelstein\_z683\_high \\
+    \# 26 Finkelstein\_z954\_low \\
+    \# 27 Finkelstein\_z954\_high \\
+    \# 28 Fontana\_z\_peak \\
+    \# 29 Fontana\_z\_weight \\
+    \# 30 Fontana\_z683\_low \\
+    \# 31 Fontana\_z683\_high \\
+    \# 32 Fontana\_z954\_low \\
+    \# 33 Fontana\_z954\_high \\
+    \# 34 Pforr\_z\_peak \\
+    \# 35 Pforr\_z\_weight \\
+    \# 36 Pforr\_z683\_low \\
+    \# 37 Pforr\_z683\_high \\
+    \# 38 Pforr\_z954\_low \\
+    \# 39 Pforr\_z954\_high \\
+    \# 40 Salvato\_z\_peak \\
+    \# 41 Salvato\_z\_weight \\
+    \# 42 Salvato\_z683\_low \\
+    \# 43 Salvato\_z683\_high \\
+    \# 44 Salvato\_z954\_low \\
+    \# 45 Salvato\_z954\_high \\
+    \# 46 Wiklind\_z\_peak \\
+    \# 47 Wiklind\_z\_weight \\
+    \# 48 Wiklind\_z683\_low \\
+    \# 49 Wiklind\_z683\_high \\
+    \# 50 Wiklind\_z954\_low \\
+    \# 51 Wiklind\_z954\_high \\
+    \# 52 Wuyts\_z\_peak \\
+    \# 53 Wuyts\_z\_weight \\
+    \# 54 Wuyts\_z683\_low \\
+    \# 55 Wuyts\_z683\_high \\
+    \# 56 Wuyts\_z954\_low \\
+    \# 57 Wuyts\_z954\_high
+
+
+\section*{Notes}
+\begin{itemize}
+
+\item File: the name of the file with the probability distributions (PDFs) for a given object.
+
+\item ID: ID of the object as taken from the CANDELS photometry catalog below:\\
+	\photomcat
+
+\item RA: RA of the object as taken from the CANDELS photometric catalog above.
+
+\item DEC: DEC of the object as taken from the CANDELS photometric catalog above.
+
+\item \zbest: the best estimate of the redshift as determined by the CANDELS team.  \zbest\ corresponds to the secure spectroscopic redshift if one is available, or secure 3D-HST \grismz\ if available and there is no \specz, and finally \photoz\ when there is no \specz\ or 3D-HST \grismz\ available. For the \photoz\ case, \texttt{mFDa4\_z\_weight} is used as \zbest, since it produces the most accurate confidence intervals when tested, while it also produces very good results with point statistics (scatter, $\sigma_\mathrm{NMAD}$, and outlier fraction). Only the most secure quality classes for spectroscopic redshifts are included in this catalog.
+
+For 3D-HST \grismzs, the following catalogs were used (see 3D-HST MAST page: \href{https://archive.stsci.edu/prepds/3d-hst/}{https://archive.stsci.edu/prepds/3d-hst/}):
+\begin{itemize}
+\item \grismzfit
+\item \grismcat
+\end{itemize}
+
+with the following cuts:
+\begin{itemize}
+\item $\mathrm{use\_zgrism} == 1$
+\item $\mathrm{use\_phot} == 1$
+\item $\mathrm{flag1} == 0$
+\item $\mathrm{flag2} == 0$
+\item $\mathrm{z\_best\_s} \, \, !\!= 0$
+\item $\mathrm{z\_spec} <= 0$
+\item $\mathrm{z\_max\_grism} > 0.6$
+\item $\mathrm{z\_grism\_u68} - \mathrm{z\_grism\_l68} < 0.01$
+\item $(\mathrm{z\_grism\_u68} - \mathrm{z\_grism\_l68}) / (\mathrm{z\_phot\_u68} - \mathrm{z\_phot\_l68}) < 0.1$
+\item $\mathrm{z\_max\_grism} > \mathrm{z\_phot\_l95}$
+\item $\mathrm{z\_max\_grism} < \mathrm{z\_phot\_u95}$
+\end{itemize}
+
+\item $\mathrm{z\_best\_type}$: flag that shows the type of redshift deemed as best by CANDELS.  It is given by the letter ``s'' when $\mathrm{z\_best}$ is a spectroscopic redshift, ``g'' when $\mathrm{z\_best}$ is a \grismz, or ``p'' when $\mathrm{z\_best}$ is a photometric redshift.
+
+\item $\mathrm{z\_spec}$: spectroscopic redshift when available.  The \speczs\ have been gathered from a variety of catalogs, including previous public releases (e.g., MOSDEF and DEEP2) and data being released here for the first time.  Many of these redshifts were compiled by N.P.~Hathi. Only the most secure classes of \speczs\ are included in this column.
+
+\item $\mathrm{z\_spec\_ref}$: is a code indicating the catalog from which a spectroscopic redshift was obtained, if applicable.
+   The references corresponding to these codes are given at the end of this file.
+
+\item $\mathrm{z\_grism}$: is the 3D-HST grism redshift when available.  Only the best quality \grismzs\ are provided in this column (see above Note on \zbest\ for a full description of the selection).
+
+\item $\mathrm{...\_z\_peak}$: is the redshift at which a given probability distribution peaks
+   (where ``$...$'' is replaced by the identifier for the relevant participant in this and the below column names).
+
+\item $\mathrm{...\_z\_weight}$: is the centroid of the probability distribution, calculated using only values around the highest peak, i.e., only the region where the distribution is larger than 0.05 of the peak value of the distribution.
+
+\item $\mathrm{...\_z683\_low}$: is the lower boundary of the 68.3\% credible interval
+
+\item $\mathrm{...\_z683\_high}$: is the higher boundary of the 68.3\% credible interval
+
+\item $\mathrm{...\_z954\_low}$: is the lower boundary of the 95.4\% credible interval
+
+\item $\mathrm{...\_z954\_high}$: is the higher boundary of the 95.4\% credible interval
+
+\item Negative values ($-1.0$) are used whenever there is a file with a missing probability distribution,
+   so that a relevant quantity could not be calculated.
+
+\end{itemize}

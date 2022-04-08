@@ -1,0 +1,163 @@
+\documentclass[12pt,onecolumn]{article}
+
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+
+\usepackage[letterpaper,left=1.01in,right=1.01in,top=1.05in,bottom=1.03in]{geometry}
+
+\usepackage{amsmath}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\title{\textbf{CANDELS GOODS-S Redshift Catalog README}}
+
+\author{\textbf{Kodra et al. (2022)}}
+\date{\today}
+
+
+\newcommand{\photoz}{photo-$z$}
+\newcommand{\Photoz}{Photo-$z$}
+\newcommand{\photozs}{photo-$z$'s}
+\newcommand{\Photozs}{Photo-$z$'s}
+\newcommand{\zphot}{$z_\mathrm{phot}$}
+\newcommand{\specz}{spec-$z$}
+\newcommand{\Specz}{Spec-$z$}
+\newcommand{\speczs}{spec-$z$'s}
+\newcommand{\Speczs}{Spec-$z$'s}
+\newcommand{\zspec}{$z_\mathrm{spec}$}
+\newcommand{\grismz}{grism-$z$}
+\newcommand{\Grismz}{Grism-$z$}
+\newcommand{\grismzs}{grism-$z$'s}
+\newcommand{\Grismzs}{Grism-$z$'s}
+\newcommand{\zgrism}{$z_\mathrm{grism}$}
+
+\newcommand{\zpeak}{\texttt{z\_peak}}
+\newcommand{\zbest}{\texttt{z\_best}}
+\newcommand{\zweight}{\texttt{z\_weight}}
+
+
+\newcommand{\fix}[1]{\textbf{\textcolor{red}{#1}}}
+
+
+
+
+\newcommand{\field}{GOODS-S}
+% \newcommand{\photomcat}{\texttt{CANDELS.GOODSS.F160W.v1_1.photom.cat}}  % Name in Dritan's README
+\newcommand{\photomcat}{\texttt{hlsp\_candels\_hst\_wfc3\_goodss-tot-multiband\_f160w\_v1-1photom\_cat.txt}}
+\newcommand{\grismzfit}{\texttt{goodss\_3dhst.v4.1.5.zfit.linematched.fits}}
+\newcommand{\grismcat}{\texttt{goodss\_3dhst.v4.1.cat.fits}}
+
+\begin{document}
+
+\maketitle
+
+\input{redshift-cat_readme_template}
+
+
+
+\section*{Spectroscopic Redshifts}
+
+The catalogs from which the high quality spectroscopic redshifts were gathered are the following:
+\begin{itemize}
+\item \texttt{deimos\_gds.dat}
+\item \texttt{zcat.ACES.2012jun04.ascii}
+\item \texttt{gds\_mosfire\_specz.dat}
+\item \texttt{vuds\_ecdfs\_dr1.txt}
+\item DEIMOS
+\item MOSDEF (MOSFIRE)
+\end{itemize}
+
+\subsection*{N.M.~Hathi Spectroscopic Redshift Catalogs}
+\subsubsection*{References for spectroscopic redshifts catalogs and quality flags}
+
+\noindent 3D-HST and MOSDEF:
+\begin{itemize}
+\item 3D\_HST: Momcheva et al.\ 2016, ApJS, 225, 27
+\item MOSDEF: Kriek et al.\ 2015, ApJS, 218, 15
+\item quality flags for 3D-HST and MOSDEF are approximated as 3.0 and 4.0, respectively
+\end{itemize}
+
+
+\noindent Other Sources:
+\begin{itemize}
+\item VLT\_2008: Vanzella et al.\ 2008, A\&A, 478, 83
+\item VLT\_IMAG: Ravikumar et al.\ 2007, A\&A, 465, 1099
+\item VLT\_LBGs: Vanzella et al.\ 2009, ApJ, 695, 1163
+\item VIMOS\_10\_MR/LR: Balestra et al.\ 2010, A\&A, 512, 12  % string is abbreviated as VIMOS_10_
+\item Wuyts\_2009: Wuyts et al.\ 2009, ApJ, 706, 885          % string is abbreviated as Wuyts_200
+\item Kurk\_2012: Kurk et al.\ 2012, A\&A, 549, 63 (GMASS)
+% \item GRISM\_HUDF: Malhotra et al.\ 2005, ApJ, 626, 666; Hathi et al.\ 2008, ApJ, 673, 686; Rhoads et al.\ 2009, ApJ, 697, 942    % Doesn't seem to be in redshift-cat
+% \item ePEARS\_HUDF: Straughn et al.\ 2008, AJ, 135, 1624    % Doesn't seem to be in redshift-cat
+% \item ePEARS\_CDFS: Straughn et al.\ 2009, AJ, 138, 1022    % Doesn't seem to be in redshift-cat
+% \item PEARS\_ETGs: Ferreras et al.\ 2009, ApJ, 706, 158     % Doesn't seem to be in redshift-cat
+% \item GRAPES\_HUDF: Hathi et al.\ 2009, ApJ, 690, 1866; Pasquali et al.\ 2006, ApJ, 636, 115   % Doesn't seem to be in redshift-cat
+\item ACES\_2012: Cooper et al.\ 2012, MNRAS, 425, 2116
+\item VVDS\_Final: Le Fevre et al.\ 2013, A\&A, 559, 14       % string is abbreviated as VVDS_Fina
+% \item Trump\_2013: Trump et al.\ 2013, ApJ, 763, 6          % Doesn't seem to be in redshift-cat
+\item Morris\_2015: Morris et al.\ 2015, AJ, 149, 178         % string is abbreviated as Morris_20
+% \item Trump\_2015: Trump et al. 2015, submitted             % Doesn't seem to be in redshift-cat
+\item VUDS\_2015: LeFevre et al.\ 2015, A\&A, 576, A79
+\item 3D\_HST: Momcheva et al.\ 2016, ApJS, 225, 27
+\item MOSDEF: Kriek et al.\ 2015, ApJS, 218, 15
+\item quality flags for 3D-HST/Grism and MOSDEF redshifts are approximated
+\end{itemize}
+
+\noindent Following references from X-ray catalog (Silverman et al.\ 2010, ApJS, 191, 124)
+\begin{itemize}
+\item Xray\_1: Szokoly04
+\item Xray\_2: FORS2/GOODS
+% \item Xray\_3: VVDS                                      % Doesn't seem to be in redshift-cat
+% \item Xray\_5: JB/VIMOS                                  % Doesn't seem to be in redshift-cat
+\item Xray\_6: VIMOS/GOODS
+% \item Xray\_7: K20                                       % Doesn't seem to be in redshift-cat
+% \item Xray\_10: Keck                                     % Doesn't seem to be in redshift-cat
+% \item Xray\_11: Ravikumar et al. ---> same as VLT_IMAG   % Doesn't seem to be in redshift-cat
+\item Xray\_12: VIMOS Deep P80
+% \item Xray\_13: Treister et al.                          % Doesn't seem to be in redshift-cat
+% \item Xray\_14: Malte Schramm and Lutz Wisotzski         % Doesn't seem to be in redshift-cat
+% \item Xray\_15:  Keck 2010 (Salvato & Hasinger)          % Doesn't seem to be in redshift-cat
+\end{itemize}
+
+\noindent Following references from X-ray catalog (Xue et al.\ 2011, ApJS, 195, 10)
+\begin{itemize}
+% \item Xue\_1: Le Fevre et al.\ (2004)
+% \item Xue\_2: Szokoly et al.\ (2004)
+% \item Xue\_3: Zheng et al.\ (2004)
+\item Xue\_4: Mignoli et al.\ (2005)
+\item Xue\_5: Ravikumar et al.\ (2007)
+\item Xue\_6: Vanzella et al.\ (2008)
+\item Xue\_7: Popesso et al.\ (2009)
+\item Xue\_8: Treister et al.\ (2009)
+\item Xue\_9: Balestra et al.\ (2010)
+\item Xue\_10: Silverman et al.\ (2010)
+\end{itemize}
+
+\noindent Following references from GOODS--MUSIC catalog (Grazian et al.\ 2006, A\&A, 449, 951)
+\begin{itemize}
+\item K20: Mignoli et al.\ 2005, A\&A, 437, 883
+\item CXO--CDFS: Szokoly et al.\ 2004, ApJS, 155, 271
+\item VVDS: Le Fevre et al.\ 2004, A\&A, 428, 1043
+% \item MASTER: \href{http://www.eso.org/science/goods/spectroscopy/CDFS_Mastercat/}{http://www.eso.org/science/goods/spectroscopy/CDFS_Mastercat/}
+% \item LCIRS: Doherty et al.\ 2005, MNRAS, 361, 525
+\item COMBO-17: Wolf et al.\ 2004, A\&A, 421, 913
+\end{itemize}
+
+
+\noindent Following references from FIREWORKS catalog (Wuyts et al.\ 2008, ApJ, 682, 985)
+\begin{itemize}
+% \item FW\_5: Norman et al.\ 2002
+% \item FW\_6: Croom et al.\ 2001
+\item FW\_7: van der Wel et al.\ 2004
+% \item FW\_8: Cristiani et al.\ 2000
+% \item FW\_9: Strolger et al.\ 2004
+\item FW\_10: Daddi et al.\ 2004
+\item FW\_13: Wuyts et al.\ (2009) $\rightarrow$ same as Wuyts\_2009
+\item FW\_14: Kriek et al.\ (2007)
+% \item FW\_15: Roche et al.\ (2006)
+\item FW\_16: Private Communication: J.-S.\ Huang
+\end{itemize}
+
+
+\end{document}

@@ -1,0 +1,161 @@
+\documentclass[12pt,onecolumn]{article}
+
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+
+\usepackage[letterpaper,left=1.01in,right=1.01in,top=1.05in,bottom=1.03in]{geometry}
+
+\usepackage{amsmath}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\title{\textbf{CANDELS COSMOS Redshift Catalog README}}
+
+\author{\textbf{Kodra et al. (2022)}}
+\date{\today}
+
+
+\newcommand{\photoz}{photo-$z$}
+\newcommand{\Photoz}{Photo-$z$}
+\newcommand{\photozs}{photo-$z$'s}
+\newcommand{\Photozs}{Photo-$z$'s}
+\newcommand{\zphot}{$z_\mathrm{phot}$}
+\newcommand{\specz}{spec-$z$}
+\newcommand{\Specz}{Spec-$z$}
+\newcommand{\speczs}{spec-$z$'s}
+\newcommand{\Speczs}{Spec-$z$'s}
+\newcommand{\zspec}{$z_\mathrm{spec}$}
+\newcommand{\grismz}{grism-$z$}
+\newcommand{\Grismz}{Grism-$z$}
+\newcommand{\grismzs}{grism-$z$'s}
+\newcommand{\Grismzs}{Grism-$z$'s}
+\newcommand{\zgrism}{$z_\mathrm{grism}$}
+
+\newcommand{\zpeak}{\texttt{z\_peak}}
+\newcommand{\zbest}{\texttt{z\_best}}
+\newcommand{\zweight}{\texttt{z\_weight}}
+
+
+\newcommand{\fix}[1]{\textbf{\textcolor{red}{#1}}}
+
+
+
+
+\newcommand{\field}{COSMOS}
+% \newcommand{\photomcat}{\texttt{CANDELS.COSMOS.F160W.v2\_1.photom.cat}}  % Name in Dritan's README
+\newcommand{\photomcat}{\texttt{hlsp\_candels\_hst\_wfc3\_cos-tot-multiband\_f160w\_v1-1photom\_cat.txt}}
+\newcommand{\grismzfit}{\texttt{cosmos\_3dhst.v4.1.5.zfit.linematched.fits}}
+\newcommand{\grismcat}{\texttt{cosmos\_3dhst.v4.1.cat.fits}}
+
+\begin{document}
+
+\maketitle
+
+\input{redshift-cat_readme_template}
+
+
+
+\section*{Spectroscopic Redshifts}
+
+The catalogs from which the high quality spectroscopic redshifts were gathered are the following:
+\begin{itemize}
+\item \texttt{deimos\_cos.dat}
+\item \texttt{vuds\_cosmos\_dr1.txt}
+\item \texttt{cosmosteam\_publicspecz.dat}
+\item DEIMOS
+\item MOSDEF (MOSFIRE)
+\end{itemize}
+
+\subsection*{N.M.~Hathi Spectroscopic Redshift Catalogs}
+\subsubsection*{References for spectroscopic redshifts catalogs and quality flags}
+
+\noindent 3D-HST and MOSDEF:
+\begin{itemize}
+\item 3D\_HST: Momcheva et al.\ 2016, ApJS, 225, 27
+\item MOSDEF: Kriek et al.\ 2015, ApJS, 218, 15
+\item quality flags for 3D-HST and MOSDEF are approximated as 3.0 and 4.0, respectively
+\end{itemize}
+
+\noindent VUDS:
+\begin{itemize}
+\item VUDS\_2015: Le Fevre et al.\ 2015, A\&A, 576, A79
+\item 4.0: 100\% reliability
+\item 3.0: 95--100\% reliability
+\item 2.0: 75--85\% reliability
+\item 1.0: 50--75\% reliability
+\item 9.0: $\sim$ 80\% reliability (single emission line)
+\item AGN are labelled: 1x
+\item Objects other than primary are labelled: 2x, 3x, 4x
+\end{itemize}
+
+\noindent UCR DEIMOS Survey
+\begin{itemize}
+\item UCR\_UNPUB: UCR DEIMOS Survey (contact: \href{mailto:mobasher@ucr.edu}{mobasher@ucr.edu})
+\item 4.0: highest confidence
+\item 1.0: lowest confidence
+\end{itemize}
+
+
+\noindent References from COSMOS team catalog (M.~Salvato)
+\begin{itemize}
+\item PRIMUS: Coil et al.\ 2011, ApJ, 741, 8
+\item zBRIGHT: \href{mailto:simon.lilly@phys.ethz.ch}{simon.lilly@phys.ethz.ch}
+\item MOSFIRE: Kriek+ 2015, ApJS, 218, 15
+\item GEMINI-S: \href{mailto:mbalogh@uwaterloo.ca}{mbalogh@uwaterloo.ca}
+\item XSHOOTER: \href{mailto:marcella.brusa3@unibo.it}{marcella.brusa3@unibo.it}
+\item IMACS: Trump et al.\ 2011
+\item FMOST: Silverman et al.\ 2015
+\item WFC3: Krogager et al.\ 2014
+\item FMOS: \href{mailto:igr@roe.ac.uk}{igr@roe.ac.uk}
+\item IRS: \href{mailto:fu@astro.caltech.edu}{fu@astro.caltech.edu}
+\item FORS2: \href{mailto:johan.comparat@uam.es}{johan.comparat@uam.es}
+\end{itemize}
+
+\noindent zCOSMOS
+\begin{itemize}
+\item zCOSMOS: Lilly et al.\ 2007, ApJS, 172, 70 and Lilly et al.\ 2009, ApJS, 184, 218
+\item Spec-$z$ quality flags indicating reliability
+    \begin{itemize}
+        \item Galaxies and stars:
+        \begin{itemize}
+            \item $>$99.5\% 4.x, 3.x
+            \item $>$99\% 2.5
+            \item $>$95\% 9.3, 9.5, 1.5
+            \item $>$90\% 2.4
+            \item $>$70\% 1.4, 9.1, 9.4
+            \item Unlikely to be correct: 1.1, 2.1
+            \item 4.x: Very secure (99.8\%)
+        \end{itemize}
+
+        \item Broad line AGN:
+        \begin{itemize}
+            \item 14.x, 13.x:  Secure BLAGN
+            \item 12.x:        Less secure BLAGN
+            \item 18.x:        One line BLAGN
+            \item 11.x:        Insecure BLAGN
+        \end{itemize}
+
+        \item Secondary targets:
+        \begin{itemize}
+            \item One of the above preceded by 2
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\noindent Trump et al.\ (2009)
+\begin{itemize}
+\item Trump\_2009: Trump et al.\ 2009, ApJ, 696, 1195
+\item Spec-$z$ Quality Flags and redshift confidence:
+    \begin{itemize}
+        \item 4: high-confidence redshift ($>$90\% likely)
+        \item 3: likely redshift ($\sim$ 75\% likely)
+        \item 2: degenerate redshift ($\sim$ 50\% likely)
+        \item 1: redshift guess ($\sim$ 25\% likely)
+    \end{itemize}
+\end{itemize}
+
+
+
+\end{document}
