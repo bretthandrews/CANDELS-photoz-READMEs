@@ -16,7 +16,7 @@ This file contains details on the files containing the \photoz\ probability dist
 \# 7 Wuyts 		  &	 PDF from Wuyts \\
 \# 8 HB4	  	  &	 PDF from Hierarchical Bayesian combination, constructed\\
                   &  using the PDFs from the best-performing four groups \\
-\# 9 mFDa4	 	  &	 PDF from the minimum Fr\'{e}chet Distance combination\\
+\# 9 mFDa4	 	  &	 PDF from the minimum $f$-divergence combination\\
                   &  (computed with $\ell^1$ distance metric), constructed using the\\
                   &  PDFs from the best-performing four groups\\
 \end{tabular}
@@ -29,7 +29,7 @@ This file contains details on the files containing the \photoz\ probability dist
 
 \item HB4: the probability distribution with the Hierarchical Bayesian combination method (see Section 4.1), which is evaluated using only 4 of the 6 participants (Finkelstein, Fontana, Salvato, Wuyts).
 
-\item mFDa4: the probability distribution evaluated using the minimum Frechet Distance absolute (mFDa) combination method for the given object (Section 4.2).  It is chosen by using only 4 of the 6 participants (Finkelstein, Fontana, Salvato, Wuyts).
+\item mFDa4: the probability distribution evaluated using the minimum $f$-divergence absolute (mFDa) combination method for the given object (Section 4.2).  It is chosen by using only 4 of the 6 participants (Finkelstein, Fontana, Salvato, Wuyts).
 
 \item If the PDF from a participant is missing for a given object, that participant is not included in (1) the calculation of the combination methods HB4 and mFDa4 and (2) not included in the calculation of the parameter alpha of the HB method (Equation 6). Therefore, we specify at the end of the header, the number of participants used in each file separately, as shown below:
 
